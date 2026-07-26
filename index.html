@@ -1,0 +1,1656 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#747b55">
+  <meta name="description" content="2026年10月20日至26日大阪七日旅遊行程">
+  <title>大阪七日旅｜2026年10月20日～26日</title>
+  <style>
+    :root {
+      --paper: #f8f3e9;
+      --paper-deep: #eee6d7;
+      --surface: #fffdf8;
+      --ink: #393b32;
+      --muted: #6d6c61;
+      --sage: #747b55;
+      --sage-deep: #545a3d;
+      --sage-pale: #e1e2cc;
+      --line: #dcd3c1;
+      --peach: #f4e2d1;
+      --warning: #ad7049;
+      --warning-pale: #fff0df;
+      --blue: #567985;
+      --pink: #a96670;
+      --gold: #9a7837;
+      --shadow: 0 12px 32px rgba(77, 70, 56, .12);
+      --radius: 12px;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-width: 320px;
+      scroll-behavior: smooth;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        repeating-linear-gradient(0deg, rgba(94, 86, 67, .025) 0 1px, transparent 1px 6px),
+        var(--paper);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    a {
+      color: var(--sage-deep);
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid rgba(86, 121, 133, .45);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: 8px;
+      left: 8px;
+      padding: 10px 14px;
+      transform: translateY(-150%);
+      border-radius: 8px;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .skip-link:focus {
+      transform: none;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 30px 18px 26px;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(255, 255, 255, .7), transparent 34%),
+        linear-gradient(145deg, #e8e1d2, #f7efdf);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::after {
+      content: "大阪";
+      position: absolute;
+      right: 16px;
+      bottom: 10px;
+      color: rgba(116, 123, 85, .075);
+      font-family: "Yu Mincho", "Noto Serif TC", serif;
+      font-size: clamp(3rem, 11vw, 4.75rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .04em;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .hero-inner,
+    .page-shell {
+      width: min(100%, 980px);
+      margin-inline: auto;
+    }
+
+    .trip-kicker {
+      margin: 0 0 6px;
+      color: var(--sage-deep);
+      font-size: .82rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Yu Mincho", "Noto Serif TC", serif;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(2.15rem, 9vw, 4.5rem);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      line-height: 1.2;
+    }
+
+    .date-range {
+      position: relative;
+      z-index: 1;
+      margin: 8px 0 20px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .lodging-overview {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 9px;
+    }
+
+    .lodging-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      min-width: 0;
+      padding: 11px 12px;
+      border: 1px solid rgba(116, 123, 85, .2);
+      border-radius: 9px;
+      background: rgba(255, 253, 248, .72);
+    }
+
+    .lodging-icon,
+    .event-icon {
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      color: var(--sage-deep);
+      background: var(--sage-pale);
+    }
+
+    .lodging-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+    }
+
+    .lodging-icon svg,
+    .event-icon svg,
+    .button-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .lodging-copy {
+      min-width: 0;
+    }
+
+    .lodging-copy small,
+    .lodging-copy strong {
+      display: block;
+    }
+
+    .lodging-copy small {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .lodging-copy strong {
+      overflow-wrap: anywhere;
+      font-size: .91rem;
+      line-height: 1.35;
+    }
+
+    .map-link,
+    .small-action {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 8px 11px;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--sage-deep);
+      font-size: .78rem;
+      font-weight: 900;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+
+    .map-link:hover,
+    .small-action:hover {
+      border-color: var(--sage);
+      background: #f4f4e8;
+    }
+
+    .page-shell {
+      padding: 18px 14px 80px;
+    }
+
+    .reminders {
+      margin-bottom: 17px;
+      border: 1px solid #e4c5a7;
+      border-radius: var(--radius);
+      background: var(--warning-pale);
+      box-shadow: 4px 4px 0 rgba(173, 112, 73, .09);
+    }
+
+    .reminders summary {
+      display: flex;
+      min-height: 58px;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      color: #76472f;
+      list-style: none;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .reminders summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .alert-mark {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--warning);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .reminder-count {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      margin-left: auto;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .78);
+      font-size: .8rem;
+    }
+
+    .reminders ol {
+      margin: 0;
+      padding: 0 22px 17px 48px;
+      color: #614b3e;
+      font-size: .9rem;
+    }
+
+    .reminders li + li {
+      margin-top: 7px;
+    }
+
+    .date-nav-wrap {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      margin-inline: -14px;
+      padding: 9px 14px;
+      background: rgba(248, 243, 233, .94);
+      border-block: 1px solid rgba(220, 211, 193, .75);
+      backdrop-filter: blur(10px);
+    }
+
+    .date-nav {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 7px;
+      width: min(100%, 680px);
+      margin-inline: auto;
+    }
+
+    .date-tab {
+      min-width: 0;
+      min-height: 62px;
+      padding: 7px 3px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      cursor: pointer;
+    }
+
+    .date-tab span,
+    .date-tab strong {
+      display: block;
+    }
+
+    .date-tab span {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 800;
+    }
+
+    .date-tab strong {
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .date-tab[aria-selected="true"] {
+      color: #fff;
+      border-color: var(--sage);
+      background: var(--sage);
+      box-shadow: 4px 4px 0 rgba(84, 90, 61, .18);
+    }
+
+    .date-tab[aria-selected="true"] span {
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .day-panel {
+      padding-top: 20px;
+    }
+
+    .day-panel.is-hidden {
+      display: none;
+    }
+
+    .day-summary {
+      padding: 17px 16px;
+      border-left: 5px solid var(--sage);
+      background: rgba(255, 253, 248, .62);
+      box-shadow: 4px 4px 0 rgba(84, 90, 61, .08);
+    }
+
+    .day-number {
+      margin: 0 0 3px;
+      color: var(--sage-deep);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .day-summary h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 6vw, 2.25rem);
+      line-height: 1.35;
+    }
+
+    .day-facts {
+      display: grid;
+      gap: 7px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .day-fact {
+      display: grid;
+      grid-template-columns: 4.7em minmax(0, 1fr);
+      gap: 8px;
+    }
+
+    .day-fact strong {
+      color: var(--ink);
+    }
+
+    .day-notice {
+      margin: 13px 0 0;
+      padding: 10px 12px;
+      border-left: 4px solid var(--warning);
+      background: var(--warning-pale);
+      color: #694b39;
+      font-size: .86rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 18px 0 10px;
+    }
+
+    .toolbar-label {
+      color: var(--sage-deep);
+      font-weight: 900;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      gap: 7px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .event {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, .72);
+      box-shadow: 4px 4px 0 rgba(84, 90, 61, .055);
+    }
+
+    .time-band {
+      display: flex;
+      min-height: 45px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 13px;
+      color: #fff;
+      background: var(--sage);
+      font-size: .9rem;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+
+    .status {
+      flex: 0 0 auto;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #fff3dd;
+      color: #85552f;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .status.official {
+      background: #e7eef0;
+      color: #3f6875;
+    }
+
+    .event-main {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 11px;
+      padding: 15px 13px 14px;
+    }
+
+    .event-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 9px;
+    }
+
+    .event[data-type="交通"] .event-icon {
+      color: #476b76;
+      background: #dce9ec;
+    }
+
+    .event[data-type="用餐"] .event-icon {
+      color: #8c5a39;
+      background: #f4e1cf;
+    }
+
+    .event[data-type="購物"] .event-icon {
+      color: #8d5660;
+      background: #f1dce0;
+    }
+
+    .event[data-type="景點"] .event-icon {
+      color: #6b6841;
+      background: #e8e4c6;
+    }
+
+    .event[data-type="飯店"] .event-icon {
+      color: #655886;
+      background: #e7e0ef;
+    }
+
+    .event-copy {
+      min-width: 0;
+    }
+
+    .event-meta {
+      margin: 0 0 3px;
+      color: var(--sage-deep);
+      font-size: .71rem;
+      font-weight: 900;
+      letter-spacing: .09em;
+    }
+
+    .event h3 {
+      margin: 0;
+      overflow-wrap: anywhere;
+      font-family: inherit;
+      font-size: 1.08rem;
+      line-height: 1.45;
+    }
+
+    .event-summary {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .event-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .detail-toggle[aria-expanded="true"] .toggle-word::after {
+      content: "收合";
+    }
+
+    .detail-toggle[aria-expanded="false"] .toggle-word::after {
+      content: "詳細資訊";
+    }
+
+    .chevron {
+      display: inline-block;
+      transition: transform .2s ease;
+    }
+
+    .detail-toggle[aria-expanded="true"] .chevron {
+      transform: rotate(180deg);
+    }
+
+    .event-details {
+      grid-column: 1 / -1;
+      margin-top: 1px;
+      padding: 14px 13px 2px 55px;
+      border-top: 1px dashed var(--line);
+      background: rgba(238, 230, 215, .38);
+    }
+
+    .event-details[hidden] {
+      display: none;
+    }
+
+    .detail-group {
+      margin: 0 0 13px;
+    }
+
+    .detail-group dt {
+      margin-bottom: 3px;
+      color: var(--sage-deep);
+      font-size: .77rem;
+      font-weight: 900;
+    }
+
+    .detail-group dd {
+      margin: 0;
+      color: #55564e;
+      font-size: .88rem;
+    }
+
+    .detail-group ul {
+      margin: 4px 0 0;
+      padding-left: 1.25em;
+    }
+
+    .detail-group li + li {
+      margin-top: 4px;
+    }
+
+    .choices {
+      display: grid;
+      gap: 9px;
+      margin-top: 11px;
+    }
+
+    .choice-button {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      width: 100%;
+      min-height: 60px;
+      padding: 11px;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      cursor: pointer;
+    }
+
+    .choice-letter {
+      display: grid;
+      width: 31px;
+      height: 31px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--paper-deep);
+      color: var(--sage-deep);
+      font-weight: 900;
+    }
+
+    .choice-button[aria-pressed="true"] {
+      border: 2px solid var(--sage);
+      background: #f1f2e5;
+    }
+
+    .choice-button[aria-pressed="true"] .choice-letter {
+      background: var(--sage);
+      color: #fff;
+    }
+
+    .choice-note {
+      margin: 8px 0 0;
+      color: var(--warning);
+      font-size: .77rem;
+      font-weight: 900;
+    }
+
+    .day-switcher {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 21px;
+    }
+
+    .day-switcher button {
+      min-height: 50px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--sage-deep);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .day-switcher button:disabled {
+      opacity: .35;
+      cursor: default;
+    }
+
+    .error-box {
+      padding: 18px;
+      border: 1px solid #d49b9b;
+      border-radius: 10px;
+      background: #fff0f0;
+      color: #713f3f;
+    }
+
+    .top-button {
+      position: fixed;
+      z-index: 30;
+      right: 15px;
+      bottom: calc(15px + var(--safe-bottom));
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      transform: translateY(90px);
+      border: 0;
+      border-radius: 50%;
+      background: var(--sage-deep);
+      color: #fff;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .top-button.is-visible {
+      transform: none;
+      opacity: 1;
+    }
+
+    .top-button svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .footer-note {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: .75rem;
+      text-align: center;
+    }
+
+    @media (min-width: 720px) {
+      .hero {
+        padding-block: 52px 42px;
+      }
+
+      .lodging-overview {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .page-shell {
+        padding: 25px 24px 90px;
+      }
+
+      .date-nav {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        width: min(100%, 900px);
+      }
+
+      .reminders ol {
+        columns: 2;
+        column-gap: 36px;
+      }
+
+      .reminders li {
+        break-inside: avoid;
+      }
+
+      .day-facts {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+
+      .event-main {
+        padding: 17px;
+      }
+
+      .event-details {
+        padding-left: 70px;
+      }
+
+      .choices {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        font-size: 17px;
+      }
+
+      .hero {
+        padding-inline: 14px;
+      }
+
+      .lodging-row {
+        grid-template-columns: auto minmax(0, 1fr);
+      }
+
+      .lodging-row .map-link {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
+
+      .event-main {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 9px;
+        padding-inline: 11px;
+      }
+
+      .event-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .event-details {
+        padding-left: 12px;
+      }
+
+      .toolbar {
+        align-items: flex-start;
+      }
+
+      .toolbar-label {
+        width: 100%;
+      }
+    }
+
+    @media print {
+      :root {
+        --paper: #fff;
+        --surface: #fff;
+      }
+
+      body {
+        font-size: 11pt;
+        background: #fff;
+      }
+
+      .hero {
+        padding: 16px 0;
+        background: #fff;
+      }
+
+      .hero::after,
+      .date-nav-wrap,
+      .toolbar,
+      .day-switcher,
+      .top-button,
+      .event-buttons,
+      .choice-note,
+      .skip-link {
+        display: none !important;
+      }
+
+      .page-shell {
+        width: 100%;
+        padding: 0;
+      }
+
+      .reminders {
+        box-shadow: none;
+      }
+
+      .reminders:not([open]) > *:not(summary) {
+        display: block !important;
+      }
+
+      .day-panel,
+      .day-panel.is-hidden {
+        display: block !important;
+        break-before: page;
+      }
+
+      .timeline {
+        display: block;
+      }
+
+      .event {
+        margin-bottom: 10px;
+        break-inside: avoid;
+        box-shadow: none;
+      }
+
+      .event-details,
+      .event-details[hidden] {
+        display: block !important;
+      }
+
+      .choices {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至行程內容</a>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="trip-kicker">六人家族旅行・七天六夜</p>
+      <h1>大阪，慢慢走</h1>
+      <p class="date-range">2026年10月20日（週二）～10月26日（週一）</p>
+    </div>
+  </header>
+
+  <main class="page-shell" id="main-content">
+    <details class="reminders" open>
+      <summary>
+        <span class="alert-mark" aria-hidden="true">!</span>
+        <span>待確認事項</span>
+        <span class="reminder-count" id="reminder-count" aria-label="待確認事項數量">0</span>
+      </summary>
+      <ol id="reminder-list"></ol>
+    </details>
+
+    <div class="date-nav-wrap">
+      <nav class="date-nav" id="date-nav" role="tablist" aria-label="切換每日行程"></nav>
+    </div>
+
+    <div id="days-container"></div>
+    <noscript>
+      <div class="error-box">此行程頁需要啟用 JavaScript 才能切換日期與展開詳細資訊。</div>
+    </noscript>
+    <p class="footer-note">行程與營業資訊可能變動，出發前請再次確認官方公告。</p>
+  </main>
+
+  <button class="top-button" id="top-button" type="button" aria-label="回到頁面頂端" title="回到頁面頂端">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6 14l6-6 6 6"></path>
+    </svg>
+  </button>
+
+  <script>
+    "use strict";
+
+    const tripData = {
+      reminders: [
+        "寶可夢咖啡廳大阪店10月21日13:00預約尚未完成。",
+        "10月21日晚餐要在心齋橋吃，或回MIMARU料理，尚未決定。",
+        "10月22日日本環球影城入園票券種類尚待確認。",
+        "日本環球影城10月22日及23日營業時間尚待官方公布。",
+        "10月23日快速通關、任天堂世界及設施時間尚待補充。",
+        "10月22日計程車可能需要兩輛，或預約一輛大型計程車。"
+      ],
+      hotels: [
+        {
+          nights: "10月20日至21日",
+          name: "MIMARU大阪 難波STATION ANNEX",
+          note: "大阪府大阪市浪速區日本橋3-6-4",
+          map: "MIMARU大阪 難波STATION ANNEX"
+        },
+        {
+          nights: "10月22日至23日",
+          name: "環球影城港灣酒店",
+          note: "Hotel Universal Port｜15:00開始入住｜步行至日本環球影城約4分鐘",
+          map: "Hotel Universal Port Osaka"
+        }
+      ],
+      days: [
+        {
+          date: "2026-10-20",
+          shortDate: "10/20",
+          weekday: "週二",
+          dayNumber: "第1天",
+          title: "抵達大阪、通天閣、新世界",
+          hotel: "MIMARU大阪 難波STATION ANNEX",
+          areas: "關西國際機場、難波、日本橋、新世界",
+          highlight: "抵達大阪、採買、眺望市景與大阪料理",
+          items: [
+            {
+              time: "12:15",
+              type: "交通",
+              title: "抵達關西國際機場",
+              summary: "完成入境與領取行李後，準備前往難波。",
+              details: [
+                { label: "注意事項", values: ["依當天入境與行李領取狀況彈性調整。"] }
+              ]
+            },
+            {
+              time: "約13:45",
+              type: "交通",
+              title: "搭大眾運輸前往難波",
+              summary: "搭南海電鐵前往難波。",
+              details: [
+                { label: "交通方式", values: ["搭大眾運輸（南海電鐵）前往難波。"] }
+              ]
+            },
+            {
+              time: "約15:00～15:30",
+              type: "飯店",
+              title: "抵達MIMARU大阪 難波STATION ANNEX",
+              summary: "辦理入住及放置行李。",
+              map: "MIMARU大阪 難波STATION ANNEX",
+              details: [
+                { label: "地址", values: ["大阪府大阪市浪速區日本橋3-6-4"] },
+                { label: "處理事項", values: ["辦理入住。", "將行李放置妥當後再出發採買。"] }
+              ]
+            },
+            {
+              time: "15:30～16:00",
+              type: "購物",
+              title: "業務超市高津店採買",
+              summary: "採買宵夜、隔日晚餐食材、飲料與簡單料理材料。",
+              map: "業務超市高津店 大阪",
+              details: [
+                { label: "採買內容", values: ["10月20日晚上的宵夜", "10月21日晚餐可能使用的食材", "飲料、零食、冷凍食品或簡單料理材料"] },
+                { label: "地址", values: ["大阪府大阪市中央區日本橋2-1-9"] },
+                { label: "營業時間", values: ["09:00～21:00"] }
+              ]
+            },
+            {
+              time: "16:00～16:15",
+              type: "飯店",
+              title: "回MIMARU整理採買",
+              summary: "將冷藏及冷凍食品放入冰箱。",
+              map: "MIMARU大阪 難波STATION ANNEX",
+              details: [
+                { label: "注意事項", values: ["冷藏及冷凍食品先妥善收納，再繼續下午行程。"] }
+              ]
+            },
+            {
+              time: "16:15",
+              type: "交通",
+              title: "從MIMARU出發前往通天閣",
+              summary: "前往新世界地區。",
+              map: "通天閣",
+              details: [
+                { label: "目的地", values: ["通天閣與新世界地區。"] }
+              ]
+            },
+            {
+              time: "16:40～17:50",
+              type: "景點",
+              title: "參觀通天閣",
+              summary: "參觀大阪代表性地標。",
+              map: "通天閣",
+              details: [
+                { label: "行程重點", values: ["參觀通天閣並眺望大阪市景。"] }
+              ]
+            },
+            {
+              time: "17:50～18:30",
+              type: "景點",
+              title: "新世界商店街與鏘鏘橫丁",
+              summary: "散步、看招牌與感受新世界街區氣氛。",
+              map: "新世界商店街 大阪",
+              details: [
+                { label: "主要區域", values: ["新世界商店街", "鏘鏘橫丁"] }
+              ]
+            },
+            {
+              time: "18:30～19:45",
+              type: "用餐",
+              title: "新世界晚餐",
+              summary: "以串炸、土手燒、大阪燒等大阪料理為主要考量。",
+              map: "新世界商店街 大阪",
+              details: [
+                { label: "餐點方向", values: ["串炸", "土手燒", "大阪燒等大阪料理"] },
+                { label: "備註", values: ["尚未指定餐廳，依現場狀況選擇。"] }
+              ]
+            },
+            {
+              time: "約20:15",
+              type: "飯店",
+              title: "回MIMARU休息",
+              summary: "結束第一天行程。",
+              map: "MIMARU大阪 難波STATION ANNEX",
+              details: [
+                { label: "住宿", values: ["MIMARU大阪 難波STATION ANNEX"] }
+              ]
+            }
+          ]
+        },
+        {
+          date: "2026-10-21",
+          shortDate: "10/21",
+          weekday: "週三",
+          dayNumber: "第2天",
+          title: "黑門市場、寶可夢、心齋橋",
+          hotel: "MIMARU大阪 難波STATION ANNEX",
+          areas: "黑門市場、心齋橋",
+          highlight: "市場早餐、角色商品、咖啡廳與購物",
+          items: [
+            {
+              time: "09:00～10:20",
+              type: "用餐",
+              title: "黑門市場吃早餐及逛市場",
+              summary: "以分食方式品嚐多種市場小吃。",
+              map: "黑門市場 大阪",
+              details: [
+                { label: "早餐可考慮", values: ["海鮮", "玉子燒", "和牛", "水果", "小吃分食"] }
+              ]
+            },
+            {
+              time: "10:20左右",
+              type: "交通",
+              title: "坐計程車前往大丸心齋橋店",
+              summary: "從黑門市場坐計程車前往心齋橋。",
+              details: [
+                { label: "交通方式", values: ["從黑門市場坐計程車前往大丸心齋橋店。"] }
+              ]
+            },
+            {
+              time: "約11:00～12:50",
+              type: "購物",
+              title: "寶可夢中心大阪DX",
+              summary: "位於大丸心齋橋店本館9樓，指定商品抵達後優先尋找。",
+              map: "寶可夢中心大阪DX",
+              details: [
+                { label: "地點", values: ["大丸心齋橋店本館9樓"] },
+                { label: "營業時間", values: ["10:00～20:00"] },
+                { label: "注意事項", values: ["熱門商品、大阪限定商品及特定款式可能售罄。", "商品不保證每天補貨。", "如果有指定商品，抵達後要優先尋找。"] }
+              ]
+            },
+            {
+              time: "12:50",
+              type: "用餐",
+              title: "寶可夢咖啡廳大阪店報到",
+              summary: "預約時間前10分鐘報到。",
+              status: "待確認",
+              map: "寶可夢咖啡廳大阪店",
+              details: [
+                { label: "報到時間", values: ["建議於13:00預約時段前10分鐘報到。"] },
+                { label: "預約狀態", values: ["目前預約是否成功尚未確定。"] }
+              ]
+            },
+            {
+              time: "13:00～14:30",
+              type: "用餐",
+              title: "寶可夢咖啡廳大阪心齋橋店午餐",
+              summary: "建議預約13:00時段，用餐時間90分鐘。",
+              status: "待確認",
+              map: "寶可夢咖啡廳大阪店",
+              details: [
+                { label: "注意事項", values: ["咖啡廳需要事先預約。", "建議預約13:00時段。", "必須在預約時間前10分鐘報到。", "用餐時間為90分鐘。", "目前預約尚未完成。"] }
+              ]
+            },
+            {
+              time: "14:30～16:30",
+              type: "購物",
+              title: "逛心齋橋PARCO",
+              summary: "角色商品、扭蛋與動漫商店。",
+              map: "心齋橋PARCO",
+              details: [
+                { label: "主要景點", values: ["心齋橋PARCO 5樓", "萬代南夢宮Cross Store（跨界商店）", "官方扭蛋店", "一番賞、動漫商品及角色商店"] },
+                { label: "扭蛋店營業時間", values: ["10:00～20:00"] }
+              ]
+            },
+            {
+              time: "16:30～18:00",
+              type: "購物",
+              title: "心齋橋PARCO及周邊商店",
+              summary: "繼續購物與逛心齋橋周邊。",
+              map: "心齋橋PARCO",
+              details: [
+                { label: "安排", values: ["依當天購物進度彈性調整。"] }
+              ]
+            },
+            {
+              time: "18:00以後",
+              type: "用餐",
+              title: "晚餐二選一",
+              summary: "可在心齋橋附近用餐，或回MIMARU料理。",
+              status: "待決定",
+              choices: [
+                "在心齋橋附近吃晚餐。",
+                "回MIMARU，料理前一天在業務超市購買的食材。"
+              ],
+              details: [
+                { label: "目前狀態", values: ["晚餐安排尚未決定，可在網頁中先標記偏好的選項。"] }
+              ]
+            }
+          ]
+        },
+        {
+          date: "2026-10-22",
+          shortDate: "10/22",
+          weekday: "週四",
+          dayNumber: "第3天",
+          title: "扭蛋、道頓堀、日本環球影城",
+          hotel: "環球影城港灣酒店",
+          areas: "心齋橋、道頓堀、日本環球影城",
+          highlight: "扭蛋、道頓堀散步與下午入園",
+          notice: "大型行李預計先另外處理，不帶著大型行李逛心齋橋及道頓堀；如果仍有隨身行李，抵達環球影城港灣酒店後寄放。",
+          items: [
+            {
+              time: "09:30左右",
+              type: "飯店",
+              title: "MIMARU退房",
+              summary: "確認大型行李已另行處理。",
+              map: "MIMARU大阪 難波STATION ANNEX",
+              details: [
+                { label: "行李安排", values: ["大型行李預計先另外處理。", "不帶著大型行李逛心齋橋及道頓堀。"] }
+              ]
+            },
+            {
+              time: "10:00～11:00",
+              type: "購物",
+              title: "#C-pla+大阪心齋橋筋店",
+              summary: "店內有超過1,100種扭蛋。",
+              map: "#C-pla+大阪心齋橋筋店",
+              details: [
+                { label: "地址", values: ["大阪市中央區心齋橋筋2-7-3"] },
+                { label: "營業時間", values: ["10:00～23:00"] },
+                { label: "店家資訊", values: ["店內有超過1,100種扭蛋。"] }
+              ]
+            },
+            {
+              time: "11:00～12:30",
+              type: "景點",
+              title: "逛道頓堀",
+              summary: "招牌、河畔步道、法善寺與法善寺橫丁。",
+              map: "道頓堀",
+              details: [
+                { label: "景點包括", values: ["固力果跑跑人招牌", "戎橋", "道頓堀川步道", "螃蟹、章魚及河豚等大型立體招牌", "法善寺", "水掛不動尊", "法善寺橫丁"] },
+                { label: "延伸地圖", values: ["法善寺"] }
+              ],
+              extraMaps: [{ label: "法善寺地圖", query: "法善寺 大阪" }]
+            },
+            {
+              time: "12:30～13:40",
+              type: "用餐",
+              title: "道頓堀午餐及最後逛街",
+              summary: "午餐後保留少量時間最後採買。",
+              map: "道頓堀",
+              details: [
+                { label: "備註", values: ["尚未指定餐廳，依現場狀況選擇。"] }
+              ]
+            },
+            {
+              time: "14:00",
+              type: "交通",
+              title: "坐計程車前往環球影城港灣酒店",
+              summary: "預計14:20左右抵達，建議保留約15分鐘緩衝。",
+              status: "交通提醒",
+              map: "Hotel Universal Port Osaka",
+              details: [
+                { label: "交通方式", values: ["從道頓堀坐計程車前往環球影城港灣酒店。"] },
+                { label: "重要提醒", values: ["實際抵達時間會受到道路交通狀況影響，建議保留約15分鐘緩衝。", "一般計程車可能需要分成兩輛。", "如果希望6人坐同一輛，需事先預約大型計程車。"] }
+              ]
+            },
+            {
+              time: "14:20～14:50",
+              type: "飯店",
+              title: "環球影城港灣酒店辦理入住手續",
+              summary: "正式入住時間是15:00，14:20不保證可以進房。",
+              map: "Hotel Universal Port Osaka",
+              details: [
+                { label: "處理方式", values: ["如果房間已經準備好，先進房放東西。", "如果房間尚未準備好，先將行李寄放櫃檯。", "酒店正式入住時間是15:00，所以14:20不保證可以進房。"] },
+                { label: "英文名稱", values: ["Hotel Universal Port"] }
+              ]
+            },
+            {
+              time: "14:50左右",
+              type: "交通",
+              title: "步行前往日本環球影城",
+              summary: "從環球影城港灣酒店步行約4分鐘。",
+              map: "日本環球影城",
+              details: [
+                { label: "交通方式", values: ["從環球影城港灣酒店步行前往日本環球影城。"] }
+              ]
+            },
+            {
+              time: "約15:00～15:10",
+              type: "景點",
+              title: "進入日本環球影城",
+              summary: "晚上以逛園區、拍照、夜間活動及排隊較短的設施為主。",
+              status: "待官方公布",
+              statusClass: "official",
+              map: "日本環球影城",
+              details: [
+                { label: "票券確認", values: ["需要確認購買的是可以在第一天下午15:00入園、第二天整天入園的1.5日影城入場券，或其他適用票券。"] },
+                { label: "營業時間", values: ["10月22日正式開園與閉園時間尚待官方公布。"] },
+                { label: "晚間安排", values: ["逛園區", "拍照", "看夜間活動", "體驗排隊較短的設施"] },
+                { label: "季節活動", values: ["2026年萬聖節活動預計仍在舉辦期間，但詳細內容需要出發前再次確認。"] }
+              ]
+            },
+            {
+              time: "晚上閉園後",
+              type: "交通",
+              title: "步行回環球影城港灣酒店",
+              summary: "閉園後步行回酒店休息。",
+              map: "Hotel Universal Port Osaka",
+              details: [
+                { label: "交通方式", values: ["從日本環球影城步行回環球影城港灣酒店。"] }
+              ]
+            }
+          ]
+        },
+        {
+          date: "2026-10-23",
+          shortDate: "10/23",
+          weekday: "週五",
+          dayNumber: "第4天",
+          title: "整天日本環球影城",
+          hotel: "環球影城港灣酒店",
+          areas: "日本環球影城",
+          highlight: "提早抵達入口，全天園區行程待補充",
+          items: [
+            {
+              time: "早上",
+              type: "交通",
+              title: "提早前往日本環球影城入口",
+              summary: "建議比官方表定開園時間提早約1～1.5小時到入口。",
+              status: "待官方公布",
+              statusClass: "official",
+              map: "日本環球影城",
+              details: [
+                { label: "注意事項", values: ["建議比官方表定開園時間提早約1～1.5小時到入口。", "實際開園時間待官方公布。", "園區可能比表定時間提早開放。", "主要設施、快速通關與任天堂世界的詳細時間目前尚未確定。"] }
+              ]
+            },
+            {
+              time: "全天",
+              type: "景點",
+              title: "日本環球影城",
+              summary: "當天詳細安排保留為待補充。",
+              status: "待補充",
+              map: "日本環球影城",
+              details: [
+                { label: "之後補充", values: ["快速通關時間", "任天堂世界入場時間", "必玩設施", "午餐及晚餐", "表演時間", "休息安排"] },
+                { label: "目前狀態", values: ["不預先填入尚未確認的票券、設施或快速通關時間。"] }
+              ]
+            }
+          ]
+        },
+        {
+          date: "2026-10-24",
+          shortDate: "10/24",
+          weekday: "週六",
+          dayNumber: "第5天",
+          title: "當日行程待補充",
+          hotel: "待補充",
+          areas: "待補充",
+          highlight: "住宿、交通與景點安排待補充",
+          items: [
+            {
+              time: "全天",
+              type: "景點",
+              title: "10月24日行程待補充",
+              summary: "目前尚未提供當日行程內容。",
+              status: "待補充",
+              details: [
+                { label: "之後補充", values: ["當日住宿", "主要區域", "交通方式", "景點與用餐安排"] }
+              ]
+            }
+          ]
+        },
+        {
+          date: "2026-10-25",
+          shortDate: "10/25",
+          weekday: "週日",
+          dayNumber: "第6天",
+          title: "當日行程待補充",
+          hotel: "待補充",
+          areas: "待補充",
+          highlight: "住宿、交通與景點安排待補充",
+          items: [
+            {
+              time: "全天",
+              type: "景點",
+              title: "10月25日行程待補充",
+              summary: "目前尚未提供當日行程內容。",
+              status: "待補充",
+              details: [
+                { label: "之後補充", values: ["當日住宿", "主要區域", "交通方式", "景點與用餐安排"] }
+              ]
+            }
+          ]
+        },
+        {
+          date: "2026-10-26",
+          shortDate: "10/26",
+          weekday: "週一",
+          dayNumber: "第7天",
+          title: "當日行程待補充",
+          hotel: "待補充",
+          areas: "待補充",
+          highlight: "住宿、交通與景點安排待補充",
+          items: [
+            {
+              time: "全天",
+              type: "景點",
+              title: "10月26日行程待補充",
+              summary: "目前尚未提供當日行程內容。",
+              status: "待補充",
+              details: [
+                { label: "之後補充", values: ["當日住宿", "主要區域", "交通方式", "景點與用餐安排"] }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    const iconPaths = {
+      "飯店": '<path d="M4 20V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14M8 8h2m2 0h2m-6 4h2m2 0h2m-8 8v-4h8v4M2 20h20"/>',
+      "景點": '<path d="M12 3l3 5h4l-2 4 2 7H5l2-7-2-4h4l3-5zm0 5v11"/>',
+      "購物": '<path d="M6 8h12l1 12H5L6 8zm3 0a3 3 0 0 1 6 0"/>',
+      "用餐": '<path d="M7 3v8m-3-8v5a3 3 0 0 0 6 0V3M7 11v10m8-18v18m0-18c3 2 4 6 0 9"/>',
+      "交通": '<path d="M6 17h12m-11 3h.01M17 20h.01M5 17V7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v10l-2 3M7 20l-2-3m1-6h12M8 7h8"/>'
+    };
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function iconSvg(type) {
+      const path = iconPaths[type] || iconPaths["景點"];
+      return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + path + "</svg>";
+    }
+
+    function mapUrl(query) {
+      return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query || "大阪");
+    }
+
+    function mapLink(query, label) {
+      if (!query) return "";
+      return '<a class="map-link" href="' + mapUrl(query) + '" target="_blank" rel="noopener noreferrer" aria-label="在新分頁開啟' +
+        escapeHtml(label || query) + '的Google地圖">開啟地圖 <span aria-hidden="true">↗</span></a>';
+    }
+
+    function renderReminders() {
+      const list = document.getElementById("reminder-list");
+      const count = document.getElementById("reminder-count");
+      const reminders = Array.isArray(tripData.reminders) ? tripData.reminders : [];
+      if (list) {
+        list.innerHTML = reminders.length
+          ? reminders.map((item) => "<li>" + escapeHtml(item) + "</li>").join("")
+          : "<li>目前沒有待確認事項。</li>";
+      }
+      if (count) count.textContent = String(reminders.length);
+    }
+
+    function renderDetails(details) {
+      const groups = Array.isArray(details) ? details : [];
+      if (!groups.length) {
+        return '<dl><div class="detail-group"><dt>詳細資訊</dt><dd>目前沒有其他補充內容。</dd></div></dl>';
+      }
+      return '<dl>' + groups.map((group) => {
+        const values = Array.isArray(group.values) ? group.values : [];
+        const content = values.length > 1
+          ? "<ul>" + values.map((value) => "<li>" + escapeHtml(value) + "</li>").join("") + "</ul>"
+          : escapeHtml(values[0] || "資料待補充");
+        return '<div class="detail-group"><dt>' + escapeHtml(group.label || "補充資訊") + '</dt><dd>' + content + '</dd></div>';
+      }).join("") + "</dl>";
+    }
+
+    function renderChoices(choices, eventId) {
+      if (!Array.isArray(choices) || !choices.length) return "";
+      return '<div class="choices" role="group" aria-label="晚餐選項">' +
+        choices.map((choice, index) => {
+          const letter = String.fromCharCode(65 + index);
+          return '<button class="choice-button" type="button" aria-pressed="false" data-choice-group="' + eventId + '">' +
+            '<span class="choice-letter">' + letter + '</span><span>' + escapeHtml(choice) + '</span></button>';
+        }).join("") +
+        '</div><p class="choice-note">目前為「待決定」，點選僅供同行者比較，不代表已預訂。</p>';
+    }
+
+    function renderEvent(item, dayIndex, itemIndex) {
+      const safeItem = item && typeof item === "object" ? item : {};
+      const eventId = "event-" + dayIndex + "-" + itemIndex;
+      const type = safeItem.type || "景點";
+      const status = safeItem.status
+        ? '<span class="status ' + escapeHtml(safeItem.statusClass || "") + '">' + escapeHtml(safeItem.status) + '</span>'
+        : "";
+      const extraMaps = Array.isArray(safeItem.extraMaps)
+        ? safeItem.extraMaps.map((entry) => mapLink(entry.query, entry.label)).join("")
+        : "";
+
+      return '<article class="event" data-type="' + escapeHtml(type) + '">' +
+        '<div class="time-band"><span>' + escapeHtml(safeItem.time || "時間待補充") + '</span>' + status + '</div>' +
+        '<div class="event-main">' +
+          '<span class="event-icon">' + iconSvg(type) + '</span>' +
+          '<div class="event-copy">' +
+            '<p class="event-meta">' + escapeHtml(type) + '</p>' +
+            '<h3>' + escapeHtml(safeItem.title || "行程內容待補充") + '</h3>' +
+            (safeItem.summary ? '<p class="event-summary">' + escapeHtml(safeItem.summary) + '</p>' : "") +
+            renderChoices(safeItem.choices, eventId) +
+            '<div class="event-buttons">' +
+              mapLink(safeItem.map, safeItem.title) +
+              extraMaps +
+              '<button class="small-action detail-toggle" type="button" aria-expanded="false" aria-controls="' + eventId + '-details">' +
+                '<span class="toggle-word"></span> <span class="chevron" aria-hidden="true">⌄</span>' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="event-details" id="' + eventId + '-details" hidden>' + renderDetails(safeItem.details) + '</div>' +
+        '</div>' +
+      '</article>';
+    }
+
+    function renderDay(day, dayIndex) {
+      const safeDay = day && typeof day === "object" ? day : {};
+      const items = Array.isArray(safeDay.items) ? safeDay.items : [];
+      return '<section class="day-panel' + (dayIndex === 0 ? "" : " is-hidden") + '" id="day-panel-' + dayIndex +
+        '" role="tabpanel" aria-labelledby="day-tab-' + dayIndex + '">' +
+        '<header class="day-summary">' +
+          '<p class="day-number">' + escapeHtml(safeDay.dayNumber || ("第" + (dayIndex + 1) + "天")) + '・' +
+            escapeHtml(safeDay.shortDate || "") + '・' + escapeHtml(safeDay.weekday || "") + '</p>' +
+          '<h2>' + escapeHtml(safeDay.title || "當日行程待補充") + '</h2>' +
+          '<div class="day-facts">' +
+            '<div class="day-fact"><strong>當日住宿</strong><span>' + escapeHtml(safeDay.hotel || "待補充") + '</span></div>' +
+            '<div class="day-fact"><strong>主要區域</strong><span>' + escapeHtml(safeDay.areas || "待補充") + '</span></div>' +
+            '<div class="day-fact"><strong>行程重點</strong><span>' + escapeHtml(safeDay.highlight || "待補充") + '</span></div>' +
+          '</div>' +
+          (safeDay.notice ? '<p class="day-notice"><strong>行李提醒：</strong>' + escapeHtml(safeDay.notice) + '</p>' : "") +
+        '</header>' +
+        '<div class="toolbar">' +
+          '<span class="toolbar-label">當日時間軸</span>' +
+          '<div class="toolbar-actions">' +
+            '<button class="small-action expand-all" type="button" data-day="' + dayIndex + '">展開全部</button>' +
+            '<button class="small-action collapse-all" type="button" data-day="' + dayIndex + '">收合全部</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="timeline">' +
+          (items.length ? items.map((item, itemIndex) => renderEvent(item, dayIndex, itemIndex)).join("") :
+            '<div class="error-box">這一天的行程資料目前無法顯示。</div>') +
+        '</div>' +
+        '<div class="day-switcher">' +
+          '<button class="previous-day" type="button" data-target="' + (dayIndex - 1) + '"' + (dayIndex === 0 ? " disabled" : "") + '>← 前一天</button>' +
+          '<button class="next-day" type="button" data-target="' + (dayIndex + 1) + '"' + (dayIndex === tripData.days.length - 1 ? " disabled" : "") + '>後一天 →</button>' +
+        '</div>' +
+      '</section>';
+    }
+
+    function renderDays() {
+      const nav = document.getElementById("date-nav");
+      const container = document.getElementById("days-container");
+      const days = Array.isArray(tripData.days) ? tripData.days : [];
+      if (!nav || !container) return;
+      if (!days.length) {
+        container.innerHTML = '<div class="error-box">行程資料目前無法顯示，請稍後再試。</div>';
+        return;
+      }
+
+      nav.innerHTML = days.map((day, index) => {
+        return '<button class="date-tab" id="day-tab-' + index + '" type="button" role="tab" aria-selected="' +
+          (index === 0 ? "true" : "false") + '" aria-controls="day-panel-' + index + '" data-day="' + index + '">' +
+          '<span>' + escapeHtml(day.weekday || "") + '</span><strong>' + escapeHtml(day.shortDate || ("第" + (index + 1) + "天")) + '</strong></button>';
+      }).join("");
+
+      container.innerHTML = days.map(renderDay).join("");
+    }
+
+    function selectDay(index, shouldScroll) {
+      const days = Array.isArray(tripData.days) ? tripData.days : [];
+      const nextIndex = Math.max(0, Math.min(Number(index), days.length - 1));
+      document.querySelectorAll(".date-tab").forEach((tab, tabIndex) => {
+        tab.setAttribute("aria-selected", String(tabIndex === nextIndex));
+        tab.setAttribute("tabindex", tabIndex === nextIndex ? "0" : "-1");
+      });
+      document.querySelectorAll(".day-panel").forEach((panel, panelIndex) => {
+        panel.classList.toggle("is-hidden", panelIndex !== nextIndex);
+      });
+      if (shouldScroll) {
+        const navWrap = document.querySelector(".date-nav-wrap");
+        const top = navWrap ? navWrap.getBoundingClientRect().bottom + window.scrollY : 0;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }
+
+    function setDetails(button, expanded) {
+      const detailsId = button.getAttribute("aria-controls");
+      const details = detailsId ? document.getElementById(detailsId) : null;
+      if (!details) return;
+      button.setAttribute("aria-expanded", String(expanded));
+      details.hidden = !expanded;
+    }
+
+    function bindInteractions() {
+      document.addEventListener("click", (event) => {
+        const target = event.target instanceof Element ? event.target : null;
+        if (!target) return;
+
+        const tab = target.closest(".date-tab");
+        if (tab) {
+          selectDay(Number(tab.getAttribute("data-day")), true);
+          return;
+        }
+
+        const dayButton = target.closest(".previous-day, .next-day");
+        if (dayButton && !dayButton.disabled) {
+          selectDay(Number(dayButton.getAttribute("data-target")), true);
+          return;
+        }
+
+        const toggle = target.closest(".detail-toggle");
+        if (toggle) {
+          setDetails(toggle, toggle.getAttribute("aria-expanded") !== "true");
+          return;
+        }
+
+        const expandButton = target.closest(".expand-all, .collapse-all");
+        if (expandButton) {
+          const dayIndex = expandButton.getAttribute("data-day");
+          const panel = document.getElementById("day-panel-" + dayIndex);
+          const shouldExpand = expandButton.classList.contains("expand-all");
+          panel?.querySelectorAll(".detail-toggle").forEach((button) => setDetails(button, shouldExpand));
+          return;
+        }
+
+        const choice = target.closest(".choice-button");
+        if (choice) {
+          const group = choice.getAttribute("data-choice-group");
+          document.querySelectorAll('[data-choice-group="' + group + '"]').forEach((button) => {
+            button.setAttribute("aria-pressed", String(button === choice));
+          });
+          return;
+        }
+      });
+
+      document.getElementById("date-nav")?.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        const active = document.activeElement;
+        if (!(active instanceof HTMLElement) || !active.classList.contains("date-tab")) return;
+        const current = Number(active.getAttribute("data-day"));
+        const offset = event.key === "ArrowRight" ? 1 : -1;
+        const next = Math.max(0, Math.min(current + offset, tripData.days.length - 1));
+        event.preventDefault();
+        selectDay(next, false);
+        document.getElementById("day-tab-" + next)?.focus();
+      });
+
+      const topButton = document.getElementById("top-button");
+      topButton?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      window.addEventListener("scroll", () => {
+        topButton?.classList.toggle("is-visible", window.scrollY > 500);
+      }, { passive: true });
+    }
+
+    function initialize() {
+      try {
+        renderReminders();
+        renderDays();
+        bindInteractions();
+      } catch (error) {
+        console.error("行程頁初始化失敗：", error);
+        const container = document.getElementById("days-container");
+        if (container) {
+          container.innerHTML = '<div class="error-box"><strong>行程暫時無法完整顯示。</strong><br>請重新整理頁面；若問題持續，請檢查行程資料格式。</div>';
+        }
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initialize, { once: true });
+    } else {
+      initialize();
+    }
+  </script>
+</body>
+</html>
