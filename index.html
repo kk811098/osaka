@@ -918,6 +918,7 @@
       <ol id="reminder-list"></ol>
     </details>
 
+    <div id="date-nav-anchor" aria-hidden="true"></div>
     <div class="date-nav-wrap">
       <nav class="date-nav" id="date-nav" role="tablist" aria-label="切換每日行程"></nav>
     </div>
@@ -1568,9 +1569,11 @@
         panel.classList.toggle("is-hidden", panelIndex !== nextIndex);
       });
       if (shouldScroll) {
-        const navWrap = document.querySelector(".date-nav-wrap");
-        const top = navWrap ? navWrap.getBoundingClientRect().bottom + window.scrollY : 0;
-        window.scrollTo({ top, behavior: "smooth" });
+        window.requestAnimationFrame(() => {
+          const navAnchor = document.getElementById("date-nav-anchor");
+          const top = navAnchor ? Math.max(0, navAnchor.offsetTop - 72) : 0;
+          window.scrollTo({ top, behavior: "smooth" });
+        });
       }
     }
 
@@ -1587,14 +1590,16 @@
         const target = event.target instanceof Element ? event.target : null;
         if (!target) return;
 
-        const tab = target.closest(".date-tab");
-        if (tab) {
-          selectDay(Number(tab.getAttribute("data-day")), true);
-          return;
-        }
+      const tab = target.closest(".date-tab");
+      if (tab) {
+        if (tab instanceof HTMLElement) tab.blur();
+        selectDay(Number(tab.getAttribute("data-day")), true);
+        return;
+      }
 
         const dayButton = target.closest(".previous-day, .next-day");
         if (dayButton && !dayButton.disabled) {
+          if (dayButton instanceof HTMLElement) dayButton.blur();
           selectDay(Number(dayButton.getAttribute("data-target")), true);
           return;
         }
