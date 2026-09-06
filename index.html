@@ -612,6 +612,17 @@
       margin-top: 11px;
     }
 
+    .choice-item {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .choice-menu {
+      width: 100%;
+    }
+
     .choice-button {
       display: grid;
       grid-template-columns: auto minmax(0, 1fr);
@@ -1129,8 +1140,16 @@
               summary: "選擇高級大阪燒與鐵板料理，或江戶前鰻魚料理。",
               status: "待決定",
               choices: [
-                "ぷれじでんと千房：預約座位後全部單點。",
-                "赤坂ふきぬき：江戶前鰻魚料理。"
+                {
+                  text: "ぷれじでんと千房：鐵板燒、大阪燒。",
+                  menuUrl: "https://www.chibo.com/menu/",
+                  menuName: "ぷれじでんと千房"
+                },
+                {
+                  text: "赤坂ふきぬき：江戶前鰻魚料理。",
+                  menuUrl: "menus/akasaka-fukinuki-menu.pdf",
+                  menuName: "赤坂ふきぬき"
+                }
               ],
               choiceLabel: "午餐選項",
               choiceNote: "目前為「待決定」，點選僅供同行者比較，不代表已預訂。選赤坂ふきぬき需調整為12:00前入店。",
@@ -1645,8 +1664,12 @@
       return '<div class="choices" role="group" aria-label="' + escapeHtml(choiceLabel || "行程選項") + '">' +
         choices.map((choice, index) => {
           const letter = String.fromCharCode(65 + index);
-          return '<button class="choice-button" type="button" aria-pressed="false" data-choice-group="' + eventId + '">' +
-            '<span class="choice-letter">' + letter + '</span><span>' + escapeHtml(choice) + '</span></button>';
+          const choiceData = choice && typeof choice === "object" ? choice : { text: choice };
+          const menuLink = choiceData.menuUrl
+            ? '<a class="map-link choice-menu" href="' + escapeHtml(choiceData.menuUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="在新分頁查看' + escapeHtml(choiceData.menuName || choiceData.text || letter) + '菜單">查看菜單 <span aria-hidden="true">↗</span></a>'
+            : "";
+          return '<div class="choice-item"><button class="choice-button" type="button" aria-pressed="false" data-choice-group="' + eventId + '">' +
+            '<span class="choice-letter">' + letter + '</span><span>' + escapeHtml(choiceData.text || "選項待補充") + '</span></button>' + menuLink + '</div>';
         }).join("") +
         '</div><p class="choice-note">' + escapeHtml(choiceNote || "目前為「待決定」，點選僅供同行者比較，不代表已預訂。") + '</p>';
     }
