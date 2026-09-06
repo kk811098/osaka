@@ -1123,26 +1123,29 @@
               ]
             },
             {
-              time: "12:50",
+              time: "12:00～14:30",
               type: "用餐",
-              title: "寶可夢咖啡廳大阪店報到",
-              summary: "預約時間前10分鐘報到。",
-              status: "待確認",
-              map: "寶可夢咖啡廳大阪店",
+              title: "午餐二選一",
+              summary: "選擇高級大阪燒與鐵板料理，或江戶前鰻魚料理。",
+              status: "待決定",
+              choices: [
+                "ぷれじでんと千房：預約座位後全部單點。",
+                "赤坂ふきぬき：江戶前鰻魚料理。"
+              ],
+              choiceLabel: "午餐選項",
+              choiceNote: "目前為「待決定」，點選僅供同行者比較，不代表已預訂。選赤坂ふきぬき需調整為12:00前入店。",
+              extraMaps: [
+                { query: "ぷれじでんと千房 大丸心斎橋店", label: "ぷれじでんと千房", buttonLabel: "千房地圖" },
+                { query: "赤坂ふきぬき 大丸心斎橋店", label: "赤坂ふきぬき", buttonLabel: "赤坂地圖" }
+              ],
+              externalLinks: [
+                { url: "https://restaurant.ikyu.com/115050/plan11509863/", label: "千房預約座位" },
+                { url: "https://booking.ebica.jp/webrsv/search/e014247401/37331", label: "赤坂預約座位" }
+              ],
               details: [
-                { label: "報到時間", values: ["建議於13:00預約時段前10分鐘報到。"] },
-                { label: "預約狀態", values: ["目前預約是否成功尚未確定。"] }
-              ]
-            },
-            {
-              time: "13:00～14:30",
-              type: "用餐",
-              title: "寶可夢咖啡廳大阪心齋橋店午餐",
-              summary: "建議預約13:00時段，用餐時間90分鐘。",
-              status: "待確認",
-              map: "寶可夢咖啡廳大阪店",
-              details: [
-                { label: "注意事項", values: ["咖啡廳需要事先預約。", "建議預約13:00時段。", "必須在預約時間前10分鐘報到。", "用餐時間為90分鐘。", "目前預約尚未完成。"] }
+                { label: "選項A｜ぷれじでんと千房", values: ["位於大丸心齋橋店本館10樓，以高級大阪燒及鐵板料理為主。", "可只預約座位，6人入座後全部單點，不必選套餐。", "單點大阪燒約1,600～3,500日圓，另收餐飲費10%服務費。", "若希望6人使用七席包廂式鐵板吧台，需另向店家確認；電話06-6251-7080。", "建議用餐時間約13:00～14:20。"] },
+                { label: "選項B｜赤坂ふきぬき", values: ["位於大丸心齋橋店本館10樓，供應先蒸後烤的江戶前鰻魚料理。", "平日午間鰻魚飯約2,600～3,600日圓，午間鰻魚茶泡飯約2,800日圓，不收服務費。", "可以只預約座位並於當日單點，不必選會席套餐。", "午餐預約只接受11:00～12:00入店；若選此方案，需提早結束寶可夢中心行程並於12:00前抵達。", "6人建議要求安排同一桌；電話06-6120-0522。"] },
+                { label: "共同提醒", values: ["兩個選項都尚未預訂。", "菜單、價格與訂位規則可能調整，預約前請再次查看店家頁面。"] }
               ]
             },
             {
@@ -1599,10 +1602,16 @@
       return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query || "大阪");
     }
 
-    function mapLink(query, label) {
+    function mapLink(query, label, buttonLabel) {
       if (!query) return "";
       return '<a class="map-link" href="' + mapUrl(query) + '" target="_blank" rel="noopener noreferrer" aria-label="在新分頁開啟' +
-        escapeHtml(label || query) + '的Google地圖">開啟地圖 <span aria-hidden="true">↗</span></a>';
+        escapeHtml(label || query) + '的Google地圖">' + escapeHtml(buttonLabel || "開啟地圖") + ' <span aria-hidden="true">↗</span></a>';
+    }
+
+    function externalLink(url, label) {
+      if (!url) return "";
+      return '<a class="map-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' +
+        escapeHtml(label || "開啟連結") + ' <span aria-hidden="true">↗</span></a>';
     }
 
     function renderReminders() {
@@ -1631,15 +1640,15 @@
       }).join("") + "</dl>";
     }
 
-    function renderChoices(choices, eventId) {
+    function renderChoices(choices, eventId, choiceLabel, choiceNote) {
       if (!Array.isArray(choices) || !choices.length) return "";
-      return '<div class="choices" role="group" aria-label="晚餐選項">' +
+      return '<div class="choices" role="group" aria-label="' + escapeHtml(choiceLabel || "行程選項") + '">' +
         choices.map((choice, index) => {
           const letter = String.fromCharCode(65 + index);
           return '<button class="choice-button" type="button" aria-pressed="false" data-choice-group="' + eventId + '">' +
             '<span class="choice-letter">' + letter + '</span><span>' + escapeHtml(choice) + '</span></button>';
         }).join("") +
-        '</div><p class="choice-note">目前為「待決定」，點選僅供同行者比較，不代表已預訂。</p>';
+        '</div><p class="choice-note">' + escapeHtml(choiceNote || "目前為「待決定」，點選僅供同行者比較，不代表已預訂。") + '</p>';
     }
 
     function renderEvent(item, dayIndex, itemIndex) {
@@ -1650,7 +1659,10 @@
         ? '<span class="status ' + escapeHtml(safeItem.statusClass || "") + '">' + escapeHtml(safeItem.status) + '</span>'
         : "";
       const extraMaps = Array.isArray(safeItem.extraMaps)
-        ? safeItem.extraMaps.map((entry) => mapLink(entry.query, entry.label)).join("")
+        ? safeItem.extraMaps.map((entry) => mapLink(entry.query, entry.label, entry.buttonLabel)).join("")
+        : "";
+      const externalLinks = Array.isArray(safeItem.externalLinks)
+        ? safeItem.externalLinks.map((entry) => externalLink(entry.url, entry.label)).join("")
         : "";
 
       return '<article class="event" data-type="' + escapeHtml(type) + '">' +
@@ -1661,10 +1673,11 @@
             '<p class="event-meta">' + escapeHtml(type) + '</p>' +
             '<h3>' + escapeHtml(safeItem.title || "行程內容待補充") + '</h3>' +
             (safeItem.summary ? '<p class="event-summary">' + escapeHtml(safeItem.summary) + '</p>' : "") +
-            renderChoices(safeItem.choices, eventId) +
+            renderChoices(safeItem.choices, eventId, safeItem.choiceLabel, safeItem.choiceNote) +
             '<div class="event-buttons">' +
               mapLink(safeItem.map, safeItem.title) +
               extraMaps +
+              externalLinks +
               '<button class="small-action detail-toggle" type="button" aria-expanded="false" aria-controls="' + eventId + '-details">' +
                 '<span class="toggle-word"></span> <span class="chevron" aria-hidden="true">⌄</span>' +
               '</button>' +
